@@ -1,0 +1,35 @@
+entity Lamp : Decoration {
+	id				2
+	texMask			"npc\decoration\GreenC.bmp"
+	states {
+		idle:
+			default 0 0
+			break
+	}
+}
+
+entity Guard : Monster {
+	id				3
+	texMask			"npc\guard\mguard_@n@f_@v.bmp"
+	speed			2
+	health			10
+	states {
+		idle:
+			"s" 0 1 A_Look()
+			loop
+		chase:
+			"w" [1,2,3,4] 2 A_Chase()
+			loop
+		attack:
+			"shoot" [1,2] 2
+			"shoot" 3 2 A_GunAttack()
+			"shoot" 2 2
+			goto chase
+		pain:
+			"pain" [1,2] 2
+			goto chase
+		death:
+			"die" [1,2,3,4] 2
+			break
+	}
+}

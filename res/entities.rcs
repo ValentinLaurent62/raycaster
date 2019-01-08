@@ -1,0 +1,22 @@
+entity Entity {
+	#define id:int, texMask:string
+	#define SOLID:boolean, SHOOTABLE:boolean
+	id 			NULL
+	texMask		NULL
+}
+
+entity Monster {
+	#define speed:int, health:int, target:int
+	speed		0
+	health		0
+	target		NULL
+	+SOLID
+	+SHOOTABLE
+}
+
+entity Player {
+	#define speed:int, health:intList
+	id			1
+	health		100
+	speed		4, 6
+}

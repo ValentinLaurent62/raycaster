@@ -1,0 +1,6 @@
+#include "res\script\entities.rcs"
+
+game RaycasterDemo {
+	title 			"Raycaster Demo"
+	titleScreen		"bg\title.png"
+}
